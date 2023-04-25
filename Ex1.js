@@ -6,8 +6,6 @@ var flippedCards = [];
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let startTime;
-let finishTime;
 let nextPage;
 //this function receives a list and an object and returns a boolean whether or not the object is in the list already
 function containsObject(obj, list) {
@@ -27,21 +25,9 @@ function creatCards()
     {
         $(".memory-card").remove();
     }
-    $.ajax({
-        type: "GET",
-        timeout: 6000,
-        url: "http://najeebib.mysoft.jce.ac.il/Ex1/get_current_time.php",
-        success: function (result) {
-            startTime = Number(result);
-            $(".temp").html(result);
-        },
-        error: function (request) { alert(request.statusText) }
-    });
 
     randomCharacters = [];
     cards = [];
-    startTime = 0;
-    finishTime = 0;
     matches = 0;
     //ajax get request that is sent to the server and returns the disney characters list
     $.ajax({
@@ -75,7 +61,7 @@ function creatCards()
                 cardElement.innerHTML = `
              
                 <img class="front-face" src=${card.imageUrl } />
-                <img  class="back-face" src="/Ex1/Pictures/245936-disney_logo.jpg"/>`;
+                <img  class="back-face" src="245936-disney_logo.jpg"/>`;
                 $(".board").append(cardElement);
                 //add listener for click
                 cardElement.addEventListener("click", flipCard);
@@ -156,23 +142,10 @@ function checkForMatch() {
     //if we all the matches were found
     if(matches === 10)
     {
-        //get the finish time
-        $.ajax({
-            type: "GET",
-            timeout: 6000,
-            url: "http://najeebib.mysoft.jce.ac.il/Ex1/get_current_time.php",
-            success: function (result) {
-                finishTime = Number(result);
-                //get the start time which was saved in a span element because the startTime variable gets reset to 0
-                startTime = Number($(".temp").text());
-                gameTime = finishTime - startTime;
-                alert("Congratulations you won in " + gameTime + " seconds!");
-                //remove the cards on board
-                URL = nextPage;
-                creatCards();
-            },
-            error: function (request) { alert(request.statusText) }
-        });
+        alert("Congratulations you won in " + gameTime + " seconds!");
+        //remove the cards on board
+        URL = nextPage;
+        creatCards();
     }
 }
 //remove the click listener for the matched cards

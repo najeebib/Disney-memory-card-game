@@ -1,6 +1,3 @@
-Name: Najeeb Ibrahim
-ID: 319051066
-
 The client will send http requests to the server every time they start a game, 2 request for the start and finish time and one to get the characters from disney api.
 The server will respond with a http response to the client with the requested data.
 The mechanism  that we are using is http protocol which is used to fetching resources between html documents .
@@ -28,10 +25,6 @@ files:
 index.html
 styles.css
 Ex1.js
-get_current_time.php
-Pictures which has a picture of the disney logo which is used for the back of the cards
-http://najeebib.mysoft.jce.ac.il/Ex1/index.html
-
 
 
 
