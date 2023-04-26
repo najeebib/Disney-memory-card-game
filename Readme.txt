@@ -1,14 +1,6 @@
-The client will send http requests to the server every time they start a game, 2 request for the start and finish time and one to get the characters from disney api.
-The server will respond with a http response to the client with the requested data.
-The mechanism  that we are using is http protocol which is used to fetching resources between html documents .
-
-But before that the client and the server exchange an HTTP request/response pair, they must establish a TCP connection, a process which requires several round-trips.
-
-
-
-Description of the code
-The code is written in html for the webpage, css for the styles and javascript for the backend part. The program works as follows there is a button when clicked will get the characters from the disney api
-and it will create cards and place them in the board. Then the user has to search for the matching cards by pressing on each card untill they find all matches then the program will get 10 more characters from the 
+Project description
+The program works as follows there is a button when clicked will get the characters from the disney api and it will create cards and place them in the board.
+Then the user has to search for the matching cards by pressing on each card untill they find all matches then the program will get 10 more characters from the 
 next page and start the game again.
 
 Functions
