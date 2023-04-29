@@ -23,6 +23,7 @@ function creatCards()
 {
     for(let i=0;i<20;i++)
     {
+        //remove the cards from the previous game
         $(".memory-card").remove();
     }
 
@@ -75,6 +76,7 @@ function creatCards()
 
 }
 function shuffleCards() {
+    //randomize the cards
     let currentIndex = cards.length,
         randomIndex,
         temporaryValue;
