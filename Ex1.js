@@ -1,4 +1,3 @@
-let randomCharacters = [];
 let cards = [];
 let matches = 0;
 let URL = "https://api.disneyapi.dev/characters";
@@ -26,8 +25,6 @@ function creatCards()
         //remove the cards from the previous game
         $(".memory-card").remove();
     }
-
-    randomCharacters = [];
     cards = [];
     matches = 0;
     //ajax get request that is sent to the server and returns the disney characters list
@@ -39,18 +36,14 @@ function creatCards()
             const characters = response.data;
             //get the url for the next page, next time the get request will get the characters from the next page
             nextPage = response.nextPage;
-            while(randomCharacters.length <10) {
+            while(cards.length <20) {
                 const randomIndex = Math.floor(Math.random() * 50);
                 const randomCharacter = characters[randomIndex];
 
-                if (!containsObject(randomCharacter, randomCharacters)) {
-                    randomCharacters.push(randomCharacter);
+                if (!containsObject(randomCharacter, cards)) {
+                    cards.push(randomCharacter);
+                    cards.push(randomCharacter);
                 }
-            }
-            for(let i=0; i<randomCharacters.length; i++)
-            {
-                cards.push(randomCharacters[i]);
-                cards.push(randomCharacters[i]);
             }
             //shuffle the cards in a random order
             shuffleCards();
