@@ -1,9 +1,9 @@
-Project description
+# Project description
 The program works as follows there is a button when clicked will get the characters from the disney api and it will create cards and place them in the board.
 Then the user has to search for the matching cards by pressing on each card untill they find all matches then the program will get 10 more characters from the 
 next page and start the game again.
 
-Functions
+# Functions
 creatCards(): this function gets the characters from disney api and creates two cards for each one and puts them on the board.
 shuffleCards(): this function shuffels the cards so that it gets placed in random order on the board.
 flipCard(): card click listener, flips the card when click then check for match
