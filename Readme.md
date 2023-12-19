@@ -24,11 +24,9 @@ resetBoard(): reset the board.
 
 files:
 
-index.html
-
-styles.css
-
-script.js
+index.html    
+styles.css    
+script.js    
 
 
 
