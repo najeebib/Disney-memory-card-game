@@ -1,6 +1,6 @@
 let cards = [];
 let matches = 0;
-let URL = "https://api.disneyapi.dev/characters";
+let URL = "https://api.disneyapi.dev/character";
 var flippedCards = [];
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -106,7 +106,7 @@ function flipCard() {
 
 }
 
-function checkForMatch() {
+function  checkForMatch() {
     //if the name is the same then thhere is a match
     let isMatch = firstCard.getAttribute("data-name") === secondCard.getAttribute("data-name");
     if(isMatch)
@@ -120,9 +120,14 @@ function checkForMatch() {
         {
             if(randomCharacters[i].name === name)
             {
-                alert("Nice you found a match!\nName: " + name+ "\nFilms: " + randomCharacters[i].films +
+                setTimeout(function(){
+                    alert("Nice you found a match!\nName: " + name+ "\nFilms: " + randomCharacters[i].films +
                     "\nTV Shows: " + randomCharacters[i].tvShows + "\nVideo Games: " +
                     randomCharacters[i].videoGames + "\nAttractions: " + randomCharacters[i].parkAttractions );
+               },500); //delay is in milliseconds 
+            
+            
+                
             }
         }
         //remove the click listener for the flipped cards
@@ -130,7 +135,11 @@ function checkForMatch() {
     }
     else
     {
-        alert("Not matching, try again");
+        setTimeout(function(){
+            alert("Not matching, try again");
+
+       },500); //delay is in milliseconds 
+    
         //flip the cards back
         unflipCards();
     }
